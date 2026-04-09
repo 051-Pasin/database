@@ -19,3 +19,8 @@
 
 | Attribute | Data Type | Description | Constraints |
 |---|---|---|---|
+| ride_price_id | serial | unique identifier of price | Primary Key |
+| ride_id | integer | ride id of the ride that indicates this price | Foreign Key, Not Null |
+| ticket_type | enum ('Children', 'Adult', 'Senior') | type of the ticket that specified by age | Not Null|
+| normal_price | integer | price of adult ticket without fast pass | Not Null, Check (price >= 0)
+| fast_pass_price | integer | price of adult ticket without fast pass | Not Null, Check (price >= 0)
