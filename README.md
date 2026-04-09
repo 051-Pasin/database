@@ -66,7 +66,7 @@
 | quantity | integer | quantity of this ticket | Not Null, Check (quantity >= 1) |
 | visit_date | date | visit date that user's want to use ticket | Not Null |
 | has_fast_pass | boolean | show user's has fast pass or not | default false |
-| price_snapshot | decimal (6,2) | price of the ticket at user's order | Not Null, Check (price >= 0) |
+| price_snapshot | decimal (6,2) | price of the ticket at user's order | Not Null, Check (price_snapshot >= 0) |
 
 ## Discount 
 | Attribute | Data Type | Description | Constraints |
