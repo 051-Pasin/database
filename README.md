@@ -35,27 +35,27 @@
 | Attribute | Data Type | Description | Constraints |
 |---|---|---|---|
 | cart_item_id | serial | unique identifier of cart item | Primary Key |
-| cart_id | integer |  | Foreign Key, Not Null |
-| ride_price_id | integer |  | Foreign Key, Not Null |
-| quantity | integer |  | Not Null, Check (quantity >= 1) |
-| has_fast_pass | boolean |  | Not Null |
-| visit_date | date |  | Not Null |
+| cart_id | integer | cart id of cart user order | Foreign Key, Not Null |
+| ride_price_id | integer | ride price id of the ticket price | Foreign Key, Not Null |
+| quantity | integer | quantity of the ticket | Not Null, Check (quantity >= 1) |
+| has_fast_pass | boolean | check user's want fast pass or not | Not Null |
+| visit_date | date | visit date that user's want to use ticket | Not Null |
 
 ## Booking
 | Attribute | Data Type | Description | Constraints |
 |---|---|---|---|
 | booking_id | serial | unique indentifier of booking | Primary Key |
-| user_id | integer |  | Foreign Key, Not Null |
-| totol_price | decimal (8,2) |  | Not Null, Check (price >= 0) |
+| user_id | integer | user id of the user that booking | Foreign Key, Not Null |
+| totol_price | decimal (8,2) | all price ticket that user's order | Not Null, Check (price >= 0) |
 | booking_status | enum ('Cancel', 'Pending', 'Done') |  | Not Null |
 
 ## Ticket 
 | Attribute | Data Type | Description | Constraints |
 |---|---|---|---|
-| ticket_id | serial |  | Primary Key |
-| booking_id | integer |  | Foreign Key, Not Null |
-| ride_price | integer |  | Foreign Key, Not Null |
-| quantity | integer |  | Not Null, Check (quantity >= 1) |
-| has_fast_pass | boolean |  | Not Null |
-| price_snapshot | decimal (6,2) |  | Not Null, Check (price >= 0) |
+| ticket_id | serial | unique indentifier of ticket | Primary Key |
+| booking_id | integer | booking id of the booking that create this ticket | Foreign Key, Not Null |
+| ride_price | integer | show the ticket type of this ticket | Foreign Key, Not Null |
+| quantity | integer | quantity of this ticket | Not Null, Check (quantity >= 1) |
+| has_fast_pass | boolean | show user's has fast pass or not | Not Null |
+| price_snapshot | decimal (6,2) | price of the ticket at user's order | Not Null, Check (price >= 0) |
 
