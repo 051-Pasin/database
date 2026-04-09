@@ -62,7 +62,7 @@
 |---|---|---|---|
 | ticket_id | serial | unique identifier of ticket | Primary Key |
 | booking_id | integer | booking id of the booking that create this ticket | Foreign Key, Not Null |
-| ride_price | integer | show the ticket type of this ticket | Foreign Key, Not Null |
+| ride_price_id | integer | show the ticket type of this ticket | Foreign Key, Not Null |
 | quantity | integer | quantity of this ticket | Not Null, Check (quantity >= 1) |
 | has_fast_pass | boolean | show user's has fast pass or not | default false |
 | price_snapshot | decimal (6,2) | price of the ticket at user's order | Not Null, Check (price >= 0) |
