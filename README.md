@@ -1,10 +1,10 @@
-## User
+## Customer
 | Type | Data Type | Description | Constraints |
 |---|---|---|---|
-| user_id | serial | unique identifier of user | Primary Key |
-| user_name | varchar(255) | name of account | Not Null |
-| user_password | varchar(255) | password of account | Not Null |
-| user_email | varchar(255) | user's email | Not Null |
+| customer_id | serial | unique identifier of user | Primary Key |
+| customer_name | varchar(255) | name of account | Not Null |
+| customer_password | varchar(255) | password of account | Not Null |
+| customer_email | varchar(255) | user's email | Not Null |
 
 ## Ride
 | Attribute | Data Type | Description | Constraints |
@@ -36,7 +36,7 @@
 | Attribute | Data Type | Description | Constraints |
 |---|---|---|---|
 | cart_id | serial | unique indentifier of cart | Primary Key |
-| user_id | integer | user id of the user that add this cart | Foreign Key, Not Null | 
+| customer_id | integer | user id of the user that add this cart | Foreign Key, Not Null | 
 
 ## CartItem 
 | Attribute | Data Type | Description | Constraints |
@@ -52,7 +52,7 @@
 | Attribute | Data Type | Description | Constraints |
 |---|---|---|---|
 | booking_id | serial | unique indentifier of booking | Primary Key |
-| user_id | integer | user id of the user that booking | Foreign Key, Not Null |
+| customer_id | integer | user id of the user that booking | Foreign Key, Not Null |
 | totol_price | decimal (8,2) | all price ticket that user's order | Not Null, Check (price >= 0) |
 | booking_status | enum ('Cancel', 'Done') | booking status | Not Null |
 | created_at | time | time when create booking | Not Null, Default current_time |
