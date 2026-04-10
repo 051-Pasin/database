@@ -55,6 +55,8 @@
 | user_id | integer | user id of the user that booking | Foreign Key, Not Null |
 | totol_price | decimal (8,2) | all price ticket that user's order | Not Null, Check (price >= 0) |
 | booking_status | enum ('Cancel', 'Done') | booking status | Not Null |
+| created_at | time | time when create booking | Not Null, Default current_time |
+| discount_id | int | unique identifier of discount | Foreign Key, Not Null |
 
 
 ## Ticket 
@@ -72,6 +74,7 @@
 | Attribute | Data Type | Description | Constraints |
 |---|---|---|---|
 | discount_id | serial | unique identifier of discount | Primary Key |
+| discount_code | varchar(255) | code that use for getting discount | Not Null
 | min_value | int | booking total price can use discount | Not Null, Check (min_value >= 0) |
 | percent_value | int | value of the % that discount | Not Null, Check (min_value >= 0)|
 
