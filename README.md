@@ -13,8 +13,8 @@
 | ride_name | varchar(255) | name of ride | Not Null |
 | ride_deacription | varchar(255) | brif description of the ride | Not Null |
 | image_url | text | url of the image | Not Null |
-| time_per_round | time | time per round using minute | Not Null |
-| max_per_round | int | max people can play the ride per round | Not Null |
+| time_per_round | decimal(4,2) | time per round using minute | Not Null check ( time_per_round > 0 ) |
+| max_per_round | int | max people can play the ride per round | Not Null check ( max_per_round > 1 ) |
 
 ## RidePrice
 | Attribute | Data Type | Description | Constraints |
