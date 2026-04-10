@@ -11,10 +11,10 @@
 |---|---|---|---|
 | ride_id | serial | unique identifier of ride | Primary Key |
 | ride_name | varchar(255) | name of ride | Not Null |
-| ride_deacription | varchar(255) | brif description of the ride | Not Null |
+| ride_description | varchar(255) | brif description of the ride | Not Null |
 | image_url | text | url of the image | Not Null |
 | time_per_round | decimal(4,2) | time per round using minute | Not Null check ( time_per_round > 0 ) |
-| max_per_round | int | max people can play the ride per round | Not Null check ( max_per_round > 1 ) |
+| max_per_round | integer | max people can play the ride per round | Not Null check ( max_per_round > 1 ) |
 
 ## RidePrice
 | Attribute | Data Type | Description | Constraints |
@@ -23,7 +23,7 @@
 | ride_id | integer | ride id of the ride that indicates this price | Foreign Key, Not Null |
 | normal_price | decimal(6,2) | price of adult ticket without fast pass | Not Null, Check (normal_price >= 0) |
 | fast_pass_price | decimal(6,2) | price of adult ticket with fast pass | Not Null, Check (fast_pass_price >= 0) |
-| type_id | int | type id of the ticket type that user's select | Foreign Key, Not Null | 
+| type_id | integer | type id of the ticket type that user's select | Foreign Key, Not Null | 
 
 ## TicketType
 | Attribute | Data Type | Description | Constraints |
@@ -55,7 +55,7 @@
 | customer_id | integer | user id of the user that booking | Foreign Key, Not Null |
 | totol_price | decimal (8,2) | all price ticket that user's order | Not Null, Check (price >= 0) |
 | booking_status | enum ('Cancel', 'Done') | booking status | Not Null |
-| created_at | time | time when create booking | Not Null, Default current_time |
+| created_at | timestamp | time when create booking | Not Null, Default current_timestamp |
 | discount_id | int | unique identifier of discount | Foreign Key, Not Null |
 
 
