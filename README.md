@@ -15,6 +15,7 @@
 | image_url | text | url of the image | Not Null |
 | time_per_round | decimal(4,2) | time per round using minute | Not Null check ( time_per_round > 0 ) |
 | max_per_round | integer | max people can play the ride per round | Not Null check ( max_per_round > 1 ) |
+| fast_pass_price | decimal(6,2) | price of adult ticket with fast pass | Not Null, Check (fast_pass_price >= 0) |
 
 ## RidePrice
 | Attribute | Data Type | Description | Constraints |
@@ -22,7 +23,6 @@
 | ride_price_id | serial | unique identifier of price | Primary Key |
 | ride_id | integer | ride id of the ride that indicates this price | Foreign Key, Not Null |
 | normal_price | decimal(6,2) | price of adult ticket without fast pass | Not Null, Check (normal_price >= 0) |
-| fast_pass_price | decimal(6,2) | price of adult ticket with fast pass | Not Null, Check (fast_pass_price >= 0) |
 | type_id | integer | type id of the ticket type that user's select | Foreign Key, Not Null |
 
 ## TicketType
