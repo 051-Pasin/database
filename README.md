@@ -76,5 +76,5 @@
 | discount_id | serial | unique identifier of discount | Primary Key |
 | discount_code | varchar(255) | code that use for getting discount | Not Null
 | min_value | int | booking total price can use discount | Not Null, Check (min_value >= 0) |
-| percent_value | int | value of the % that discount | Not Null, Check (min_value >= 0)|
+| percent_value | int | value of the % that discount | Not Null, Check (percent_value >= 0)|
 
