@@ -21,9 +21,9 @@
 |---|---|---|---|
 | ride_price_id | serial | unique identifier of price | Primary Key |
 | ride_id | integer | ride id of the ride that indicates this price | Foreign Key, Not Null |
+| type_id | integer | type id of the ticket type that user's select | Foreign Key, Not Null |
 | normal_price | decimal(6,2) | price of adult ticket without fast pass | Not Null, Check (normal_price >= 0) |
-| fast_pass_price | decimal(6,2) | price of adult ticket with fast pass | Not Null, Check (fast_pass_price >= 0) |
-| type_id | integer | type id of the ticket type that user's select | Foreign Key, Not Null | 
+| fast_pass_price | decimal(6,2) | price of adult ticket with fast pass | Not Null, Check (fast_pass_price >= 0) | 
 
 ## TicketType
 | Attribute | Data Type | Description | Constraints |
